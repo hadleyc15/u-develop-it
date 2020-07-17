@@ -95,9 +95,9 @@ app.post('/api/candidate', ({ body }, res) => {
 });
 
 // Create a candidate
-const sql = `INSERT INTO candidates (id, first_name, last_name, industry_connected) 
-              VALUES (?,?,?,?)`;
-const params = [1, 'Ronald', 'Firbank', 1];
+const sql = `INSERT INTO candidates (first_name, last_name, industry_connected) 
+              VALUES (?,?,?)`;
+const params = ['Ronald', 'Firbank', 1];
 // ES5 function, not arrow function, to use this
 db.run(sql, params, function (err, result) {
     if (err) {
